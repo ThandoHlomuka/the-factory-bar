@@ -13,16 +13,6 @@ const supabaseAnonKey =
   import.meta.env.SUPABASE_PUBLISHABLE_KEY ||
   ''
 
-const isConfigured = supabaseUrl && supabaseAnonKey
-
-export const supabase = createClient(
-  supabaseUrl || 'http://placeholder.invalid',
-  supabaseAnonKey || 'placeholder',
-  {
-    fetch,
-  }
-)
-
-export const isSupabaseConfigured = isConfigured
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export type { User, Session } from '@supabase/supabase-js'
