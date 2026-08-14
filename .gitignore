@@ -1,0 +1,8 @@
+.env.local
+.env
+.env.production
+.env.*.local
+node_modules
+dist
+*.log
+.vercel
