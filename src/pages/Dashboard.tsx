@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabase'
 
 interface Booking {
-  id: string
+  id: number
   customer_name: string
   email: string
   phone: string
@@ -76,7 +76,7 @@ const Dashboard = () => {
     }
   }
 
-  const handleStatusUpdate = async (id: string, status: Booking['status']) => {
+  const handleStatusUpdate = async (id: number, status: Booking['status']) => {
     const { error } = await supabase
       .from('bookings')
       .update({ status })

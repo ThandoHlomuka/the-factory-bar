@@ -1,11 +1,8 @@
--- The Factory Bar - Supabase Database Schema
-
--- Enable necessary extensions
-create extension if not exists "uuid-ossp";
+-- The Factory Bar - Supabase Database Schema (No extensions required)
 
 -- Venue information table
 create table if not exists venue_info (
-  id uuid default uuid_generate_uuid() primary key,
+  id bigint generated always as identity primary key,
   name text not null,
   description text,
   address text,
@@ -19,7 +16,7 @@ create table if not exists venue_info (
 
 -- Events table
 create table if not exists events (
-  id uuid default uuid_generate_uuid() primary key,
+  id bigint generated always as identity primary key,
   title text not null,
   description text,
   date date not null,
@@ -34,7 +31,7 @@ create table if not exists events (
 
 -- Bookings table
 create table if not exists bookings (
-  id uuid default uuid_generate_uuid() primary key,
+  id bigint generated always as identity primary key,
   customer_name text not null,
   email text not null,
   phone text,

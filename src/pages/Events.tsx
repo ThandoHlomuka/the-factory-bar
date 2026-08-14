@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabase'
 
 interface Event {
-  id: string
+  id: number
   title: string
   description: string
   date: string

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabase'
 
 interface VenueInfo {
-  id: string
+  id: number
   name: string
   description: string
   address: string
